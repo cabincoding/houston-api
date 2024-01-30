@@ -1,5 +1,4 @@
-export interface Blog {
-    id: string;
+export interface BlogDTO {
     title: string;
     date: Date;
     body: string;

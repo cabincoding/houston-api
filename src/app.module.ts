@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { BlogController } from './controllers/blog/blog.controller';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AuthorModule } from './schemas/author/author.schema.module';
 import { QuoteModule } from './schemas/quote/quote.schema.module';
@@ -11,6 +10,7 @@ import { CharactersModule } from './schemas/characters/characters.schema.module'
 import { CountriesModule } from './schemas/countries/countries.schema.module';
 import { TerminologyModule } from './schemas/terminology/terminology.schema.module';
 import { MagicModule } from './schemas/magic/magic.schema.module';
+import { BlogModule } from './schemas/blog/blog.schema.module';
 
 @Module({
   imports: [
@@ -23,8 +23,9 @@ import { MagicModule } from './schemas/magic/magic.schema.module';
     CountriesModule,
     TerminologyModule,
     MagicModule,
+    BlogModule,
   ],
-  controllers: [AppController, BlogController],
+  controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}
